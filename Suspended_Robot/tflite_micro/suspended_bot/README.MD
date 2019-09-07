@@ -9,13 +9,13 @@ operating system support, any standard C or C++ libraries, or dynamic memory all
 
 ## Development Board
 ### SparkFun Edge
-32-bit ARM Cortex-M4F processor (Ambiq Apollo3)
-48MHz CPU clock (can be overclocked to 96MHz)
-Extremely low-power usage: 6uA/MHz (48 * 6 = 288uA)
-1MB Flash
-384KB SRAM
+* 32-bit ARM Cortex-M4F processor (Ambiq Apollo3)
+* 48MHz CPU clock (can be overclocked to 96MHz)
+* Extremely low-power usage: 6uA/MHz (48 * 6 = 288uA)
+* 1MB Flash
+* 384KB SRAM
 
-##Workflow
+## Workflow
 
 ### Create TensorFlow model
 
