@@ -24,17 +24,32 @@ Provide your own implementations to use operations that are not currently suppor
 
 ### Convert the model to a TensorFlow Lite FlatBuffer
 
-Convert the model into the standard TensorFlow Lite format using the TensorFlow Lite converter. 
-You can convert it to a quantized model, since these are smaller in size and more efficient to execute.
+The model is converted into the standard TensorFlow Lite format with quantization using the TensorFlow Lite converter. 
+
+```
+import tensorflow as tf
+
+converter = tf.lite.TFLiteConverter.from_keras_model(model)
+converter.optimizations = [tf.lite.Optimize.OPTIMIZE_FOR_SIZE]
+
+tflite_model = converter.convert()
+
+open("suspened_bot_quantized.tflite", "wb").write(tflite_model)
+
+```
 
 ### Convert the FlatBuffer to a C byte array
 
 Models are kept in read-only program memory and provided in the form of a simple C file. 
-Standard tools can be used to convert the FlatBuffer into a C array.
+Standard tools like *xxd* can be used to convert the FlatBuffer into a C array (hex dump).
+```
+xxd -i suspened_bot_quantized.tflite > suspened_bot_quantized.cc
+
+```
 
 ### Integrate the TensorFlow Lite for Microcontrollers C++ library
 
-TODO
+See [main.cc](https://github.com/Machine-Learning-Tokyo/Agritech/blob/naveen/Suspended_Robot/tflite_micro/suspended_bot/main.cc) for implementation.
 
 ### Deploy to Sparkfun Edge device
 
