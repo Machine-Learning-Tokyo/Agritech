@@ -1,6 +1,8 @@
 ## Suspended Bot position inferencing using tensorflow lite quantized model at the edge
 Currently the input data is fed into the model over the serial communication, UART (Universal Asynchronous Receiver-Transmitter).
 
+![Development Board](sparkfun_edge/sparkfun_edge.jpeg)
+
 ### TensorFlow Lite for Microcontrollers
 TensorFlow Lite for Microcontrollers is an experimental port of TensorFlow Lite aimed at microcontrollers and other 
 devices with only kilobytes of memory. It is designed to be portable even to "bare metal" systems, so it doesn't require 
